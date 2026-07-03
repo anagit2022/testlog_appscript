@@ -8,16 +8,20 @@ document.getElementById("sendButton").onclick = function () {
         message: "Hello from GitHub!"
     };
 
+    console.log("Button clicked");
+    console.log(data);
+
     fetch(scriptURL, {
         method: "POST",
         body: JSON.stringify(data)
     })
     .then(response => response.text())
     .then(result => {
+        console.log("Server replied:", result);
         alert(result);
     })
     .catch(error => {
-        console.error(error);
+        console.error("Fetch error:", error);
     });
 
 };
