@@ -2,10 +2,17 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbyOsCSjnGlPaoUiZ9Ggx3
 
 document.getElementById("sendButton").onclick = function () {
 
-    const data = {
-        message: "Hello from GitHub!"
-    };
+    const now = new Date();
 
+const data = {
+
+    message: "Hello from GitHub!",
+
+    date: now.toLocaleDateString(),
+
+    time: now.toLocaleTimeString()
+
+};
     console.log("Button clicked");
     console.log(data);
 
