@@ -1,6 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbyOsCSjnGlPaoUiZ9Ggx3mknN2g5wMCO3k6KqBF-3j2CFmZoyXllcijm9SciTEVg8eQ/exec
-
-";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyOsCSjnGlPaoUiZ9Ggx3mknN2g5wMCO3k6KqBF-3j2CFmZoyXllcijm9SciTEVg8eQ/exec";
 
 document.getElementById("sendButton").onclick = function () {
 
