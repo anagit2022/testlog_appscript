@@ -1,19 +1,38 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbxDUp5CjhXYGUNRNk3YQf8XTVNkOfQ_rX3TZCgrHtC_B-XjJd_VzlexZ7acZRc_K78P/exec";
+const scriptURL = "YOUR_WEB_APP_URL";
 
-document.getElementById("sendButton").onclick = function () {
+document.getElementById("sendButton").onclick = async function () {
 
     const now = new Date();
 
-const data = {
+    let country = "Unknown";
 
-    message: "Hello from GitHub!",
+    try {
 
-    date: now.toLocaleDateString(),
+        const response = await fetch("https://ipapi.co/json/");
 
-    time: now.toLocaleTimeString()
+        const location = await response.json();
 
-};
-    console.log("Button clicked");
+        country = location.country_name;
+
+    }
+    catch(error){
+
+        console.log("Couldn't get country");
+
+    }
+
+    const data = {
+
+        message: "Hello from GitHub!",
+
+        date: now.toLocaleDateString(),
+
+        time: now.toLocaleTimeString(),
+
+        country: country
+
+    };
+
     console.log(data);
 
     fetch(scriptURL, {
